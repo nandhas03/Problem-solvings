@@ -24,7 +24,13 @@ class Result {
 
     public static String findDay(int month, int day, int year) {
 //___________________________Our_Code_______________________________________________________________
-        Calendar calendar = Calendar.getInstance();
+
+        
+ java.time.LocalDate ld = java.time.LocalDate.of(year, month, day);
+            return ld.getDayOfWeek().toString();
+        }
+//-------------------or-----------------
+       /* Calendar calendar = Calendar.getInstance();
         calendar.set(year, month - 1, day);
         
         String dayOfWeek = calendar.getDisplayName
@@ -32,7 +38,7 @@ class Result {
                            Calendar.LONG,Locale.US).toUpperCase();
         return dayOfWeek;
     }
-}
+}*/
 //_____________________________________________________________________________________________________
 public class Solution {
     public static void main(String[] args) throws IOException {
